@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            margin: 0;
+        }
+        .wallpaper{
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            background: rgb(87, 121, 243);
+            animation-name: cor;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            transition: all 0.5s;
+        }
+        @keyframes cor {
+            20%{
+                background: rgb(70, 99, 200);
+            }
+            25%{
+                background: rgb(53, 76, 157);
+            }
+            30%{
+                background: rgb(36, 53, 114);
+            }
+            35%{
+                background: rgb(36, 53, 114);
+            }
+            40%{
+                background: rgb(21, 32, 69);
+            }
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            grid-template-areas: "ceu ceu"
+                                 "mont mont";
+        }
+        .ceu{
+            grid-area: ceu;
+            height: 34vh;
+        }
+        .fundo{
+            grid-area: mont;
+        }
+        @media (min-width: 300px) and (max-width: 880px){
+            .sol{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: orange;
+                position: absolute;
+                float: right;
+                top: 100px;
+                right: 20px;
+                animation-name: solrun;
+                animation-duration: 20s;
+                animation-iteration-count: infinite;
+            }
+            .lua{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: rgb(87, 121, 243);
+                margin-top: -20px;
+                float: right;
+                animation-name: luarun;
+                animation-duration: 20s;
+                animation-iteration-count: infinite;
+            }
+            @keyframes solrun {
+                60%{
+                    top: 500px;
+                    right: 160px;
+                }
+            }
+            @keyframes luarun {
+                20%{
+                    background-color: #ddd;
+                }
+                60%{
+                    margin-top: 120px;
+                    margin-right: 50px;
+                }
+                80%{
+                    background-color: aliceblue;
+                }                
+            }
+
+            .fundo{
+                z-index: -1;
+            }
+            .img{
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                background-image:linear-gradient(rgba(154, 154, 154, 0), rgba(0, 0, 0, 0)), url(./mont-removebg-preview.png);
+                height: 66vh;
+                width: 100%;
+            }
+
+            .form{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 250px;
+                width: 250px;
+                background-color: #fff;
+                border-radius: 20px;
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .form h2{
+                text-align: center;
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            .form .text{
+                border-color: orange;
+                border-radius: 5px;
+                padding: 5px;
+                width: 80%;
+                margin-left: 10%;
+                margin-bottom: 10px;
+            }
+            .form .bnt{
+                background-color: orange;
+                padding: 4px;
+                color: #fff;
+                width: 20%;
+                margin-top: 10px;
+                margin-left: 40%;
+                border-radius: 10px;
+                border: transparent;
+            }
+            small{
+                position: relative;
+                margin-left: 20px;
+                font-size: 18px;
+                color: #aaa;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wallpaper">
+          <div class="ceu">
+            <div class="sol"></div>
+            <div class="lua"></div>
+          </div>
+          <div class="form">
+            <h2>Login:</h2>
+            <input class="text" type="text" value="Name">
+            <input class="text" type="email" value="Email">
+            <input class="text" type="password" value="Password">
+            <input class="bnt" type="submit">
+        </div>
+        <div class="fundo">
+            <div class="img"></div>
+        </div>
+    </div>
+        <small>@Vegsivir</small>
+    </div>
+    
+</body>
+</html>
